@@ -1,8 +1,33 @@
 The YASM version vsyasm.exe is designed specifically for use
-with Visual Studio 2010. To tell Visual Studio where to find
+with Visual Studio 2010. 
+
+Official releases can be downloaded here:
+http://www.tortall.net/projects/yasm/releases/
+
+For the purposes of building GMP with Visual Studio 2022
+a custom yasmwrapper.exe is built which accepts the arguments
+Visual Studio attempts to send to vsyasm and then passes
+them in a way vsyasm can handle them successfully.
+
+The limbmpq project is set up to use the vsyasm.props and
+vsyams.targets in this solution which are configured to use
+yasmwrapper.exe as as proxy.
+
+If you prefer, you can follow the official instructions below
+and attempt to use vsyasm.exe directly without the wrapper.
+
+    Alexander Higgins
+
+
+--------------------------------------------------------
+
+To tell Visual Studio where to find
 vsyasm.exe, the environment variable YASMPATH can be set to 
 the absolute path of the directory in which vsyasm.exe is
 located (this path should include the final backslash). 
+
+
+
 
 Alternatively you can find the directory (or directories) 
 where the VC++ compiler binaries are located and put copies 
